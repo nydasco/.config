@@ -1,5 +1,5 @@
 configuration {
-/*	modi: "window,run,ssh";*/
+	modi: "window,run,ssh,filebrowser";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
@@ -144,3 +144,4 @@ configuration {
       sorting-method:    "name";
   }
 }
+@theme "gruvbox-dark"
