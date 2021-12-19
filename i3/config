@@ -201,4 +201,3 @@ exec_always --no-startup-id $HOME/.config/feh/fehbg
 exec_always --no-startup-id xrandr --output Virtual-1 --mode 1440x900
 exec_always --no-startup-id conky -c ~/.config/conky/conkyrc
 exec_always --no-startup-id nm-applet
-exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf --no-vsync
