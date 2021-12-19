@@ -194,10 +194,10 @@ client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
 
 # auto load
-
+exec_always --no-startup-id xrdb -merge ~/.config/Xresources
 exec_always --no-startup-id setxkbmap "dvorak"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/feh/fehbg
 exec_always --no-startup-id xrandr --output Virtual-1 --mode 1440x900
 exec_always --no-startup-id conky -c ~/.config/conky/conkyrc
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
