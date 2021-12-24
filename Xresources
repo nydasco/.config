@@ -1,7 +1,10 @@
 URxvt*scrollBar: false
 !URxvt.font:      6x15,xft:TerminessTTFNerdFontMono,xft:DejaVu Sans Mono:autohint=true:size=12
 !URxvt.font:	     xft:DejaVu Sans Mono:autohint=true:size=12
-URxvt.font:	       6x15,xft:Terminess TTF Nerd Font Mono:autohint=true:size=12
+!URxvt.font:	       6x15,xft:Terminess TTF Nerd Font Mono:autohint=true:size=12
+URxvt.font:     xft:bitstream vera sans mono:size=16:antialias=true
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=16:antialias=true
+
 
 urxvt*depth: 32
 urxvt*background: rgba:0000/0000/0200/c800
