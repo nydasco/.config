@@ -1,6 +1,6 @@
 URxvt*scrollBar: false
 URxvt.font:      6x15,xft:TerminessTTFNerdFontMono,xft:DejaVu Sans Mono:autohint=true:size=12
-!URxvt.font:	xft:TerminessTTFNerdFontMono:size=12
+URxvt.font:	     xft:DejaVu Sans Mono:autohint=true:size=12
 
 urxvt*depth: 32
 urxvt*background: rgba:0000/0000/0200/c800
