@@ -42,7 +42,7 @@ minimum_size 0 0
 #
 # (From the next line down, #WhiteSpaceMatters) ...
 TEXT
-${voffset 10}${color EBDBB2}${font GE Inspira:pixelsize=80}${time %I:%M}
+${voffset 10}${color EBDBB2}${font GE Inspira:pixelsize=80}${time %H:%M}
 ${color 679866}${font GE Inspira:pixelsize=40}${time %d-%m-%Y}
 
 
