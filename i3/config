@@ -167,7 +167,7 @@ bindsym $mod+r mode "resize"
 # custom
 
 # gaps
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 gaps inner 20
 gaps outer 5
 
@@ -194,7 +194,7 @@ set $white #000000
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused          $blue $blue $darkgray $purple $blue
 client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
 client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
 client.urgent           $red $red $white $red $red
@@ -204,7 +204,7 @@ exec_always --no-startup-id xrdb -merge ~/.config/Xresources
 exec_always --no-startup-id setxkbmap "dvorak"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/feh/fehbg
-exec_always --no-startup-id xrandr --output Virtual-1 --mode 1920x1080
+exec_always --no-startup-id xrandr --output Virtual-1 --mode 2560x1600
 exec_always --no-startup-id conky -c ~/.config/conky/conkyrc
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf --no-vsync
