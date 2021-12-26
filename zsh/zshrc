@@ -118,4 +118,4 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias nm_reset="sudo /usr/NX/bin/nxserver --restart"
-alias v="vim "
+alias v="nvim "
