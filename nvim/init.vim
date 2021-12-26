@@ -15,6 +15,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'rktjmp/lush.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'wfxr/minimap.vim'
+Plug 'kassio/neoterm'
 
 call plug#end()
 
@@ -27,9 +28,16 @@ let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
 
+let g:neoterm_default_mod='belowright' " open terminal in bottom split
+let g:neoterm_size=10 " terminal split size
+let g:neoterm_autoscroll=1 " scroll to the bottom when running a command
+nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
+vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
+
 
 autocmd VimEnter * NERDTree | wincmd p
-
+set splitbelow
+set splitright
 set background=dark " or light if you want light mode
 colorscheme gruvbox
 
