@@ -3,7 +3,7 @@ echo " |_  / __| || |  ___ _ _     /_\  _ _ __| |_  "
 echo "  / /\__ \ __ | / _ \ ' \   / _ \| '_/ _| ' \ "
 echo " /___|___/_||_| \___/_||_| /_/ \_\_| \__|_||_|"
 echo ""
-
+# tmux ls && read tmux_session && tmux attach -t ${tmux_session:-default} || tmux new -s ${tmux_session:-default}
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
