@@ -61,8 +61,12 @@ syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
+highlight cursorline ctermfg=blue
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
+set nowrap
+highlight VertSplit cterm=NONE
+
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.b
