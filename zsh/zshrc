@@ -1,8 +1,14 @@
 # Run tmux if not already running
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    exec tmux
+if [ "$TMUX" = "" ]; then
+    # check for old session
+    if [ "$(tmux ls | grep -v attached | wc -l)" -gt "0" ]; then
+        # attach to old session
+        tmux a -t "$(tmux ls | grep -v attached | cut -d ":" -f1 | head -n 1)"
+    else
+        # start new session - dont use exec so it's possible to run without tmux
+        tmux
+    fi
 fi
-
 #echo "  _______ _  _                _          _    "
 #echo " |_  / __| || |  ___ _ _     /_\  _ _ __| |_  "
 #echo "  / /\__ \ __ | / _ \ ' \   / _ \| '_/ _| ' \ "

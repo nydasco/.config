@@ -36,7 +36,7 @@ vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
 
 inoremap jh <Esc>
 
-"autocmd VimEnter * NERDTree | wincmd p
+autocmd VimEnter * NERDTree | wincmd p
 set splitbelow
 set splitright
 set background=dark " or light if you want light mode
