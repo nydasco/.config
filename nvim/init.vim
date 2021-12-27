@@ -34,6 +34,7 @@ let g:neoterm_autoscroll=1 " scroll to the bottom when running a command
 nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
 vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
 
+inoremap jh <Esc>
 
 "autocmd VimEnter * NERDTree | wincmd p
 set splitbelow
