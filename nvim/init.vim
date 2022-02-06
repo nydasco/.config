@@ -24,6 +24,8 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+map <silent> <C-n> :NERDTreeToggle<CR>
+
 let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
@@ -53,7 +55,6 @@ set softtabstop=4           " see multiple spaces as tabstops so <BS> does the r
 set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
-set relativenumber          " add line numbers
 set wildmode=longest,list   " get bash-like ta completions
 set cc=80                   " set an 80 column border for good coding style
 filetype plugin indent on   "allow auto-indenting depending on file type
@@ -66,6 +67,13 @@ set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set nowrap
 highlight VertSplit cterm=NONE
+
+set number
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu | endif
+    autocmd BufLeave,FocusLost, InsertEnter,WinLeave * if &nu | set nornu | endif
+augroup END    
 
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
