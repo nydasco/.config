@@ -126,3 +126,4 @@ source $ZSH/oh-my-zsh.sh
 alias nm_reset="sudo /usr/NX/bin/nxserver --restart"
 alias v="nvim "
 alias ls="/usr/local/bin/logo-ls"
+alias cat="bat "
