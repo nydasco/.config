@@ -1,4 +1,4 @@
-"automated installation of vimplug if not installed
+"automated nstallation of vimplug if not installed
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -15,7 +15,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'rktjmp/lush.nvim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'wfxr/minimap.vim'
-Plug 'kassio/neoterm'
 
 call plug#end()
 
@@ -23,6 +22,8 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
+" Dvorak remapping
 
 map <silent> <C-n> :NERDTreeToggle<CR>
 
