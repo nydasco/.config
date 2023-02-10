@@ -22,6 +22,10 @@ function git_log
     git log --all --decorate --oneline --graph
 end
 
+function ...
+    ../..
+end
+
 function pbcopy
     xsel --clipboard --input $argv
 end
