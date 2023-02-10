@@ -1,0 +1,138 @@
+#!/bin/bash
+
+## Environtment
+export PATH="${PATH}:$HOME/.scripts"
+export PATH="${PATH}:$HOME/.config/bspwm"
+export PATH="${PATH}:/var/lib/flatpak/exports/share"
+export PATH="${PATH}:$HOME/.local/bin"
+export XDG_RUNTIME_DIR=/run/user/1000
+
+xrdb ~/.Xresources
+
+bspc monitor DSI1 -d 1 2 3 4
+# Second monitor
+if [[ $(xrandr -q | grep 'DP1 connected') ]]; then
+    xrandr --output DSI1 --primary --mode 1200x1920 --rotate right --output DP1 --mode 1920x1080 --rotate normal --left-of DSI1
+    # Workspaces
+    bspc monitor DP1 -d 5 6 7 8
+else
+    xrandr --output DP1 --off
+    # Remove nodes
+    while bspc node @5: --kill; do
+        :
+    done
+    while bspc node @6: --kill; do
+        :
+    done
+    while bspc node @7: --kill; do
+        :
+    done
+    while bspc node @8: --kill; do
+        :
+    done
+    # Remove workspaces
+    bspc desktop -r 5 6 7 8
+    # Remove monitor
+    bspc monitor DP1 -r
+fi
+
+
+
+## Bspwm configurations
+bspc config focus_follows_pointer false
+bspc config border_width 3
+bspc config window_gap 10
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+#bspc config paddingless_monocle true
+bspc config single_monocle false
+bspc config top_padding 32
+bspc config right_padding 8
+bspc config bottom_padding 8
+bspc config left_padding 8
+
+#bspc config top_monocle_padding 0
+#bspc config right_monocle_padding 0
+#bspc config bottom_monocle_padding 0
+#bspc config left_monocle_padding 0
+
+bspc config top_monocle_padding -32
+bspc config right_monocle_padding -8
+bspc config bottom_monocle_padding -8
+bspc config left_monocle_padding -8
+
+## Window rules
+# remove all rules first
+bspc rule -r *:*
+# 1 > terminal
+bspc rule -a Kitty desktop='^1' follow=on focus=on
+# 2 > web
+bspc rule -a Firefox desktop='^2' follow=on focus=on
+# 3 > file
+bspc rule -a Thunar desktop='^3' follow=on focus=on
+#bspc rule -a File-roller desktop='^3' follow=on focus=on
+# 4 > office
+#declare -a office=(Geany Gucharmap Evince \
+#libreoffice-writer libreoffice-calc libreoffice-impress \
+#libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice)
+#for i in ${office[@]}; do
+#   bspc rule -a $i desktop='^4' follow=on focus=on; done
+# 5 > media
+#declare -a media=(Audacity mpv Gimp Gimp-2.8)
+#for i in ${media[@]}; do
+#   bspc rule -a $i desktop='^4' follow=on focus=on; done
+# 6 > settings
+#declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
+#System-config-printer.py Pavucontrol Exo-helper-1)
+#for i in ${settings[@]}; do
+#   bspc rule -a $i desktop='^5' state=floating follow=on focus=on; done
+# special rules
+#bspc rule -a Audacious state=floating follow=on focus=on
+#bspc rule -a Firefox:Places state=floating follow=on focus=on
+#bspc rule -a Viewnior state=floating follow=on focus=on
+#bspc rule -a Conky state=floating manage=off
+#bspc rule -a stalonetray state=floating manage=off
+
+## Autostart
+xsetroot -cursor_name left_ptr
+xbacklight -set 20
+xset fp+ ~/.fonts/misc
+sxhkd &
+pipewire &
+pipewire-pulse &
+#~/.scripts/screen-auto-rotate &
+~/.config/polybar/launch.sh &
+picom &
+xsettingsd &
+WALLPAPER=$(shuf -n1 -e ~/.wallpaper/*)
+hsetroot -extend $WALLPAPER
+
+
+# Second monitor
+if [[ $(xrandr -q | grep 'DP1 connected') ]]; then
+    xrandr --output DSI1 --primary --mode 1344x840 --rotate normal --output DP1 --mode 1920x1080 --rotate normal --left-of DSI1
+    # Workspaces
+    bspc monitor DP1 -d 1 2 3 4
+else
+    xrandr --output DP1 --off
+    # Remove nodes
+    while bspc node @1: --kill; do
+        :
+    done
+    while bspc node @2: --kill; do
+        :
+    done
+    while bspc node @3: --kill; do
+        :
+    done
+    while bspc node @4: --kill; do
+        :
+    done
+    # Remove workspaces
+    bspc desktop -r 1 2 3 4
+    # Remove monitor
+    bspc monitor DP1 -r
+fi
+
+
+

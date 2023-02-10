@@ -1,0 +1,9 @@
+po|polybarright|around
+fi|fish|file
+expr|export|around
+|share|file
+e|exports|file
+flat|flatpak|file
+expo|exports|file
+f|flatpak|file
+|screen-auto-rotate|file

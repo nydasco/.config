@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Launch Polybar, using default config location ~/.config/polybar/config
+if type "xrandr"; then
+	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+		MONITOR=$m polybar leftbar & disown
+        MONITOR=$m polybar rightbat & disown
+	done
+else
+	polybar leftbar & disown && polybar rightbar & disown &
+fi
+
+echo "Polybar launched..."
