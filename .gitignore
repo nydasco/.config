@@ -1,4 +1,5 @@
 nvim/plugged/
+node_modules/
 *.temp
 tags.*
 tags
