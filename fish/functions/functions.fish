@@ -49,3 +49,7 @@ end
 function fzf_p
     fzf_tmux --reverse --border --height 60% --preview 'bat --style=numbers --color=always --line-range :500 {}'
 end
+
+function vf
+    nvim $(fzf_tmux --reverse --border --height 60% --preview 'bat --style=numbers --color=always --line-range :500 {}')
+end
