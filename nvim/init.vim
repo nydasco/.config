@@ -35,6 +35,13 @@ endif
 set statusline=
 set statusline+=%{FugitiveStatusline()}
 let g:VimuxUseNearest = 0
+
+let mapleader = "\<Space>"
+nnoremap <leader>o :FZF -m<cr>
+
+
+
+
 " dbt integration
 function! OpenDbtCompiled()
     call ExecuteDbtCommand("compile")
