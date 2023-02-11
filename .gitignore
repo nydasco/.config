@@ -1,3 +1,6 @@
 nvim/plugged/
 *.temp
 tags.*
+tags
+memos.json
+
