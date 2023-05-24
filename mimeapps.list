@@ -9,6 +9,7 @@ application/x-extension-shtml=userapp-Firefox-QJJCJ1.desktop
 application/xhtml+xml=userapp-Firefox-QJJCJ1.desktop
 application/x-extension-xhtml=userapp-Firefox-QJJCJ1.desktop
 application/x-extension-xht=userapp-Firefox-QJJCJ1.desktop
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-QJJCJ1.desktop;

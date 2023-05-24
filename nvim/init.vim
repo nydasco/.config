@@ -8,6 +8,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+Plug 'liuchengxu/vim-which-key'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
@@ -39,8 +41,11 @@ let g:VimuxUseNearest = 0
 let mapleader = "\<Space>"
 nnoremap <leader>o :FZF -m<cr>
 
-
-
+" bufferline
+set termguicolors
+lua << EOF
+require("bufferline").setup{}
+EOF
 
 " dbt integration
 function! OpenDbtCompiled()
@@ -65,6 +70,10 @@ map <Leader>dbtt :call ExecuteDbtCommand("test")<CR>
 
 map <silent> <C-n> :NERDTreeToggle<CR>
 
+"Which Key popup
+nnoremap <silent><leader> :WhichKey '<Space>'<CR>
+set timeoutlen=500
+
 "let g:minimap_width = 10
 "let g:minimap_auto_start = 1
 "let g:minimap_auto_start_win_enter = 1
@@ -76,6 +85,8 @@ nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
 vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
 
 inoremap jh <Esc>
+
+
 
 " autocmd VimEnter * NERDTree | wincmd p
 set splitbelow
