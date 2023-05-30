@@ -12,18 +12,22 @@ Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
 Plug 'liuchengxu/vim-which-key'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 Plug 'machakann/vim-sandwich'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rktjmp/lush.nvim'
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'rust-lang/rust.vim'
-Plug 'ellisonleao/gruvbox.nvim'
+" Plug 'ellisonleao/gruvbox.nvim'
 Plug 'tpope/vim-fugitive'
 " Plug 'wfxr/minimap.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/vimux'
 call plug#end()
+
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
