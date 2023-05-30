@@ -7,7 +7,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
 Plug 'liuchengxu/vim-which-key'
 Plug 'ludovicchabant/vim-gutentags'
