@@ -6,7 +6,7 @@ export PATH="${PATH}:$HOME/.config/bspwm"
 export PATH="${PATH}:/var/lib/flatpak/exports/share"
 export PATH="${PATH}:$HOME/.local/bin"
 export XDG_RUNTIME_DIR=/run/user/1000
-
+export $(dbus-launch)
 xrdb ~/.Xresources
 
 bspc monitor DSI1 -d 1 2 3 4
