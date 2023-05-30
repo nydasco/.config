@@ -28,7 +28,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/vimux'
 call plug#end()
 
-
+let g:airline_statusline_ontop=1
+let g:airline_powerline_fonts = 1
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
