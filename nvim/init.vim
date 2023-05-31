@@ -102,6 +102,8 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+nnoremap <tab> za
+
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -127,6 +129,9 @@ set autoindent              " indent a new line the same amount as the line just
 set wildmode=longest,list   " get bash-like ta completions
 set cc=80                   " set an 80 column border for good coding style
 filetype plugin indent on   "allow auto-indenting depending on file type
+set foldmethod=indent
+set foldcolumn=2
+set foldlevel=99
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
