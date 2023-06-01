@@ -26,6 +26,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'wfxr/minimap.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'preservim/vimux'
 call plug#end()
 
@@ -140,7 +141,7 @@ set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set nowrap
 highlight VertSplit cterm=NONE
-
+set scrolloff=999
 set number
 augroup numbertoggle
     autocmd!
